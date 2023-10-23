@@ -228,6 +228,7 @@ def train(args, checkpoint_path, CSV_path, logger, model, optimizer, train_x, tr
                 model.eval()
                 loop = range(args.TE)
                 for _ in tqdm(loop, total=len(loop), colour='blue', leave=False):
+                    # extract_sample(n_way, n_support, n_query, datax, datay):
                     sample = extract_sample(args.kways, args.TS, args.TQ, test_x, test_y)
                     _, output = model.set_forward_loss(sample)
 

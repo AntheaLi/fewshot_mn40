@@ -40,6 +40,8 @@ def main(args):
 
     max_epoch = args.epochs
 
+
+    # TODO
     encoder = Net(args.LV, args.emb_dim, args.K)
     device  = "cuda" if torch.cuda.is_available() and args.gpu else "cpu"
     model = ProtoNet(encoder=encoder, c=args.c, manifold=args.manifold).to(device)
